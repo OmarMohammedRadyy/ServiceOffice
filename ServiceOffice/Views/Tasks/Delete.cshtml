@@ -1,0 +1,27 @@
+﻿@model ServiceOffice.Models.WorkTask
+@{
+    ViewData["Title"] = "حذف مهمة";
+}
+<h2>حذف مهمة</h2>
+<h4>هل أنت متأكد من حذف المهمة التالية؟</h4>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">العميل</dt>
+        <dd class="col-sm-10">@Model.Client?.Name</dd>
+        <dt class="col-sm-2">الخدمة</dt>
+        <dd class="col-sm-10">@Model.Service?.Name</dd>
+        <dt class="col-sm-2">الموظف المكلف</dt>
+        <dd class="col-sm-10">@Model.AssignedEmployee?.Name</dd>
+        <dt class="col-sm-2">التاريخ</dt>
+        <dd class="col-sm-10">@Model.Date.ToShortDateString()</dd>
+        <dt class="col-sm-2">الحالة</dt>
+        <dd class="col-sm-10">@Model.Status</dd>
+        <dt class="col-sm-2">ملاحظات</dt>
+        <dd class="col-sm-10">@Model.Notes</dd>
+    </dl>
+    <form asp-action="DeleteConfirmed">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">حذف</button>
+        <a asp-action="Index" class="btn btn-secondary">إلغاء</a>
+    </form>
+</div>

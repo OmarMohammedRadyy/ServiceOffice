@@ -1,0 +1,43 @@
+﻿@model ServiceOffice.Models.WorkTask
+@{
+    ViewData["Title"] = "إضافة مهمة";
+}
+
+<h2>مهمة جديدة</h2>
+
+<form asp-action="Create">
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label asp-for="ClientId" class="form-label">العميل</label>
+            <select asp-for="ClientId" class="form-select" asp-items="@((SelectList)ViewData["ClientId"])"></select>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="ServiceId" class="form-label">الخدمة</label>
+            <select asp-for="ServiceId" class="form-select" asp-items="@((SelectList)ViewData["ServiceId"])"></select>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="AssignedEmployeeId" class="form-label">الموظف المكلف</label>
+            <select asp-for="AssignedEmployeeId" class="form-select" asp-items="@((SelectList)ViewData["AssignedEmployeeId"])"></select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label asp-for="ReceivingEmployeeId" class="form-label">الموظف المستلم</label>
+            <select asp-for="ReceivingEmployeeId" class="form-select" asp-items="@((SelectList)ViewData["ReceivingEmployeeId"])"></select>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Date" class="form-label">التاريخ</label>
+            <input asp-for="Date" type="date" class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Status" class="form-label">الحالة</label>
+            <select asp-for="Status" class="form-select" asp-items="@((SelectList)ViewData["Status"])"></select>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Notes" class="form-label">ملاحظات</label>
+        <textarea asp-for="Notes" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">حفظ المهمة</button>
+    <a asp-action="Index" class="btn btn-secondary">إلغاء</a>
+</form>

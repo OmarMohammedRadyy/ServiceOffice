@@ -1,0 +1,26 @@
+﻿@model ServiceOffice.Models.Employee
+@{
+    ViewData["Title"] = "تعديل موظف";
+}
+<h2>تعديل موظف</h2>
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Department" class="form-label"></label>
+        <input asp-for="Department" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label"></label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">حفظ التغييرات</button>
+    <a asp-action="Index" class="btn btn-secondary">عودة</a>
+</form>

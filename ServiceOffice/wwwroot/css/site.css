@@ -1,0 +1,68 @@
+/* ملف site.css */
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: "Tahoma", sans-serif;
+}
+
+/* الشريط الجانبي */
+.sidebar {
+    width: 220px;
+    background-color: #f0f4fa;
+    border-left: 1px solid #dce3f0;
+    padding-top: 20px;
+    padding-right: 10px;
+}
+
+    .sidebar .nav-link {
+        color: #344a6d;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+        .sidebar .nav-link.active,
+        .sidebar .nav-link:hover {
+            background-color: #97b1df;
+            color: #fff;
+            border-radius: 4px;
+            padding: 5px 10px;
+        }
+
+/* منطقة المحتوى */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+    .content h1 {
+        margin-bottom: 20px;
+        color: #344a6d;
+    }
+
+/* بطاقات الإحصائيات */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: #f7f9fc;
+    border: 1px solid #dce3f0;
+    border-radius: 4px;
+    text-align: center;
+    padding: 20px;
+}
+
+    .stat-card h5 {
+        color: #5a6c8a;
+        margin-bottom: 10px;
+    }
+
+    .stat-card .number {
+        font-size: 2rem;
+        color: #344a6d;
+        font-weight: bold;
+    }

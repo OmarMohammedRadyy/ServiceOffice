@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ServiceOffice.Models.Service>
+@{
+    ViewData["Title"] = "الخدمات";
+}
+<h2>الخدمات</h2>
+<p>
+    <a asp-action="Create" class="btn btn-primary">خدمة جديدة</a>
+</p>
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>اسم الخدمة</th>
+            <th>الوصف</th>
+            <th>السعر</th>
+            <th>إجراءات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price?.ToString("0.00")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">تعديل</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">حذف</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

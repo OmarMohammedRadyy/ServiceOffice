@@ -1,0 +1,22 @@
+﻿@model ServiceOffice.Models.Service
+@{
+    ViewData["Title"] = "تعديل خدمة";
+}
+<h2>تعديل خدمة</h2>
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" type="number" step="0.01" />
+    </div>
+    <button type="submit" class="btn btn-success">حفظ التغييرات</button>
+    <a asp-action="Index" class="btn btn-secondary">عودة</a>
+</form>

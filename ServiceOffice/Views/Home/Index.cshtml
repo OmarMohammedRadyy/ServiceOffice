@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "لوحة التحكم";
+    Layout = "_Layout";
+}
+<div class="dashboard-container" dir="rtl">
+    <!-- شريط التنقّل الجانبي -->
+    <aside class="sidebar">
+        <nav>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link active" asp-area="" asp-controller="Clients" asp-action="Index">العملاء</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Services" asp-action="Index">الخدمات</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Employees" asp-action="Index">الموظفون</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Tasks" asp-action="Index">المهام</a></li>
+                <li class="nav-item"><a class="nav-link" asp-controller="Reports" asp-action="Index">التقارير</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- محتوى لوحة التحكم -->
+    <section class="content">
+        <h1>لوحة التحكم</h1>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h5>إجمالي العملاء</h5>
+                <p class="number">@ViewBag.TotalClients</p>
+            </div>
+            <div class="stat-card">
+                <h5>المهام النشطة</h5>
+                <p class="number">@ViewBag.ActiveTasks</p>
+            </div>
+            <div class="stat-card">
+                <h5>المهام المكتملة اليوم</h5>
+                <p class="number">@ViewBag.TasksCompletedToday</p>
+            </div>
+            <div class="stat-card">
+                <h5>الموظفون المتاحون</h5>
+                <p class="number">@ViewBag.AvailableEmployees</p>
+            </div>
+        </div>
+    </section>
+</div>
